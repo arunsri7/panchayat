@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const postRoutes = require('./routes/post_routes.js');
 
 
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/', postRoutes);
+// app.use('/', postRoutes);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
