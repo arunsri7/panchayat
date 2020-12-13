@@ -1,12 +1,10 @@
 import React from 'react'
 import Post from './Post/Post'
 import { useSelector } from "react-redux";
-
 import useStyles from './styles'
-const posts = () => {
+const Posts = () => {
+    const posts = useSelector((state) => state.posts);
     const classes = useStyles();
-    const post = useSelector((state) => state.posts)
-
     console.log(posts);
     return (
         <>
@@ -16,4 +14,4 @@ const posts = () => {
         </>
     )
 }
-export default posts;
+export default Posts;
