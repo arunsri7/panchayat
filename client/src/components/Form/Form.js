@@ -5,18 +5,22 @@ import FileBase from 'react-file-base64';
 import './styles'
 import useStyles from './styles'
 import userEvent from '@testing-library/user-event';
+import {useDispatch} from 'react-redux'
+import {createPost} from '../../actions/posts'
 
 const Form = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [postData, setPostData] = useState({
         creator: "",
         title: "",
         message: "",
         tags: "",
         selectedFile: "",
-    })
-    const handleSubmit = () => {
-
+    }) 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createPost(postData))
     };
     const clear = () => {
 

@@ -14,6 +14,7 @@ const getPosts = async (req, res) => {
 }
 
 const createPosts = async (req,res) => {
+    console.log("reached posts")
     const post = req.body
     const newPost = new PostMessage(post);
     console.log("reached posts")
